@@ -1,0 +1,28 @@
+<html lang="EN-en">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>TwitchChat</title>
+</head>
+<body>
+    <div id="chat-container" v-chat-scroll="{always: false, smooth: false}">
+        <div class="message" v-for="message in messages">
+            <div class="time">{{message.time}}</div>
+            <template v-if="message.channel_name">
+                <div class="channel_name">[{{message.channel_name}}]</div>
+            </template>
+
+            <div class="message-badges" v-for="badge in message.badges">
+                <img class="badge" :src="badge.url" :class="{ 'broadcaster': badge.badge == 'broadcaster', 'mod': badge.badge == 'mod', 'turbo': badge.badge == 'turbo', 'premium': badge.badge == 'premium' }" />
+            </div>
+
+            <div class="username" :style="{color: message.nick_colour}">{{message.display_name || message.user}}</div>
+            <template v-if="message.me == false">
+                <div>:</div>
+            </template>
+            <div class="text" v-html="sanitize(message)" :class="{ 'system': message.source === 'sy', 'private': message.pm, 'mention': message.mention }"></div>
+        </div>
+    </div>
+    <script src="js/app.js" type="text/javascript"></script>
+</body>
+
+</html>

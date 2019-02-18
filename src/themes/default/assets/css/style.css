@@ -1,0 +1,82 @@
+body{
+    color: #5e5e5e;
+}
+#chat-container{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.message{
+    background-color: rgba(0, 0, 0, 0.86);
+    padding: 10px;
+    margin: 10px;
+    line-height: normal;
+}
+.message-badges{
+    display: inline-block;
+}
+.message-header{
+    display: inline-block;
+    height: 10px;
+}
+.message > div {
+    display: inline;
+    font-size: 15pt;
+}
+.text,
+.channel_name
+{
+    padding: 5px;
+    color: #d0d0d0;
+}
+.username{
+}
+
+.badge,
+.platform,
+.level,
+.s-level {
+    background-color: rgb(151, 151, 151);
+    border: 2px solid rgba(47, 47, 47, 1);
+    /*margin: -3px;*/
+    width: 20px;
+    height: 20px;
+    /*padding: 2px;*/
+    border-radius: 5px;
+}
+.emoji,
+.smile {
+    margin-top: -4px;
+    height: 30px;
+    width: auto;
+    top: 2px;
+}
+
+.private {
+    color: #d36325;
+}
+
+.system {
+    color: #ff68fb;
+}
+
+.mention {
+    color: #c0ffc0;
+}
+
+.broadcaster {
+    background-color: #e71818;
+}
+
+.mod {
+    background-color: #34ae0a;
+}
+
+.turbo {
+    background-color: #6441a5;
+}
+
+.premium {
+    background-color: #009CDC;
+}
